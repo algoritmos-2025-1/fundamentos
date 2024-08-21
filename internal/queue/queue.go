@@ -1,5 +1,6 @@
 package queue
 
+// Define una cola genérica
 type Queue[T any] interface {
 	// Encola un elemento
 	Enqueue(item T)

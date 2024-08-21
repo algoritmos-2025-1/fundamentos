@@ -7,31 +7,44 @@ type SliceStack[T any] struct {
 
 // Crea una estructura Stack
 func CreateSliceStack[T any]() *SliceStack[T] {
-	// código
-	return nil
+	return &SliceStack[T]{
+		items: make([]T, 0),
+	}
 }
 
 // Inserta un elemento en la pila
 func (s *SliceStack[T]) Push(item T) {
-	// código
+	s.items = append(s.items, item)
 }
 
 // Retira un elemento de la pila
 func (s *SliceStack[T]) Pop() T {
-	// código
-	var v T
-	return v
+	top := s.items[len(s.items)-1]
+	s.items = s.items[:len(s.items)-1]
+	return top
 }
 
 // Regresa el primer elemento
 func (s *SliceStack[T]) Peek() T {
-	// código
-	var v T
-	return v
+	return s.items[len(s.items)-1]
 }
 
 // Verifica si la pila es vacía
 func (s *SliceStack[T]) Empty() bool {
-	// código
-	return false
+	return len(s.items) == 0
+}
+
+// Agrega un elemento
+func (q *SliceStack[T]) Add(item T) {
+	q.Push(item)
+}
+
+// Elimina un elemento
+func (q *SliceStack[T]) Remove() T {
+	return q.Pop()
+}
+
+// Elige un elemento
+func (q *SliceStack[T]) Choose() T {
+	return q.Peek()
 }

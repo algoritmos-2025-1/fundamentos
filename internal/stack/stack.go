@@ -1,5 +1,6 @@
 package stack
 
+// Define una pila genérica
 type Stack[T any] interface {
 	// Inserta un elemento en la pila
 	Push(item T)
