@@ -61,7 +61,9 @@ func (g *AdjacencyListGraph) ResetColours() {
 	clear(g.colours)
 }
 
-// Imprime una representación de la lista de adyacencias
+//Imprime una representación de la lista de adyacencias
 func (g *AdjacencyListGraph) Print() {
-	fmt.Println(g.adjacencyList)
+	for x, y := range g.adjacencyList{
+		fmt.Println(x, ":", y)
+	} 
 }

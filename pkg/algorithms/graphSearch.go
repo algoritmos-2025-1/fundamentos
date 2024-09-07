@@ -14,7 +14,7 @@ func GraphSearch(G graph.Graph, r int, C collection.Collection[int]) (*[]int, *[
 
 	t := make([]int, G.Order())
 
-	i := 0
+	i := 0	
 	i = i + 1
 	G.Colour(r)
 	C.Add(r)
